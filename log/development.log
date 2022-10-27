@@ -276,3 +276,41 @@ Processing by ApplicationController#hello_world as */*
 Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 324)
 
 
+Started GET "/hello" for 127.0.0.1 at 2022-10-27 00:03:46 -0400
+Processing by ApplicationController#hello_world as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 3ms (Views: 0.9ms | Allocations: 324)
+
+
+Started GET "/hello" for 127.0.0.1 at 2022-10-27 00:04:49 -0400
+Processing by ApplicationController#hello_world as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 14262)
+
+
+Started GET "/hello" for 127.0.0.1 at 2022-10-27 00:04:49 -0400
+Processing by ApplicationController#hello_world as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.02ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/hello" for ::1 at 2022-10-27 00:08:18 -0400
+Processing by ApplicationController#hello_world as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 415)
+
+
+Started GET "/testing" for ::1 at 2022-10-27 00:08:35 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"testing"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 9)
+Completed 200 OK in 17ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5229)
+
+
+Started GET "/hello" for ::1 at 2022-10-27 00:08:35 -0400
+Processing by ApplicationController#hello_world as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 326)
+
+
