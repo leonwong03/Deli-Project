@@ -16,7 +16,7 @@ function NavBar({ user, setUser }) {
             <div >
                 {user ? (
                 <>
-                <Link className = "div2" to="/">User Information</Link>
+                <Link className = "div2" to="/">Store</Link>
                 <Link className = "div1" to="/vape">Vape List</Link>
                 <button className = "div1" onClick={handleLogoutClick}>Logout</button>
                 </>
@@ -29,7 +29,7 @@ function NavBar({ user, setUser }) {
                 <Link className = "div5" to="/login">Login</Link>
                 <Link className = "div5" to="/vape">Vape List</Link>
                 </>
-                
+
                 )}
             </div>
         </header>

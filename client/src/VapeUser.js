@@ -90,7 +90,7 @@ function VapeUser({ user, vape, review, handleDeleteReviews,setcurrentUser, setU
     <ol className = "div5"> {user.username}'s Reviews
         {cool3}</ol>
 
-        <button className = "div1" onClick = {()=>deleteUser(user)} >👟👟 Delete User 👟👟</button>
+        <button className = "div1" onClick = {()=>deleteUser(user)} >Delete User</button>
         <form onSubmit={handleUserChange}>
         <h1>Change Your Username!</h1>
             <label htmlFor="username">Username</label>
@@ -101,7 +101,7 @@ function VapeUser({ user, vape, review, handleDeleteReviews,setcurrentUser, setU
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             />
-        <button className = "div1"  type="submit">👟👟 Submit New Username 👟👟</button>
+        <button className = "div1"  type="submit">Submit New Username</button>
         </form>
         <form onSubmit={(e)=> handleUserAddReview(e)}>
         <h1>Add a Vape And Review to Your List!</h1>

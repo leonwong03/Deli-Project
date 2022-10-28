@@ -83,7 +83,7 @@ function App() {
           
           <main>
             <Switch>
-
+              
               <Route path={"/vape/:vapeId"}>
                 <Vape currentUser = {currentUser} vapes = {vapes} />
               </Route>

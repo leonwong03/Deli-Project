@@ -51,19 +51,9 @@ function handleSubmit(e) {
 
 return(
     <div>
-        <div className = "container">
-            {vapeId && (vapes[vapeId] !== undefined ?
-                <h1 className = "sweet"> Name:{vapes[vapeId].name} Price: ${vapes[vapeId].price} <img className = "image" src = {vapes[vapeId].image_url}></img></h1>
-            : 'Not Found')}
-        </div>
-        {vapeReviews.map((i)=> {
-            return <div className = "container"> <h1 className = ""> comment:{i.comment} rating: ${i.rating} {i.user_id === user_id ? 'edit' : ''} </h1></div>
-        })}
-    <div className = "newVapeReview">
-        <form onSubmit={(e)=> handleSubmit(e)}>
-            <h1 className = "link6">Add A New Vape Review</h1>
-            <label htmlFor="comment">Comment</label>
-
+            <div className = "newVapeReview">
+                <form onSubmit={(e)=> handleSubmit(e)}>
+            <h1 className = "link6">Add A Review</h1>
             <input
                 type="text"
                 id="comment"
@@ -83,12 +73,22 @@ return(
 
             <button type="submit">Submit</button>
 
+            <label htmlFor="comment">Comment</label>
             <div>
                 {errors.map((err) => (
                 <span className = "link3" key={err}>     {err}!</span>
                 ))}
             </div>
 
+
+        <div className = "container">
+            {vapeId && (vapes[vapeId] !== undefined ?
+                <h1 className = "sweet"> Name:{vapes[vapeId].name} Price: ${vapes[vapeId].price} <img className = "image" src = {vapes[vapeId].image_url}></img></h1>
+            : 'Not Found')}
+        </div>
+        {vapeReviews.map((i)=> {
+            return <div className = "container"> <h1 className = ""> comment:{i.comment} rating: ${i.rating} {i.user_id === user_id ? 'edit' : ''} </h1></div>
+        })}
         </form>
     </div>
     </div>

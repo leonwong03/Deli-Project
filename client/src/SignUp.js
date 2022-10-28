@@ -42,7 +42,29 @@ import { Form } from "react-bootstrap";
     return (
         <div>
         <Form  className="form-control" onSubmit={handleSubmit}>
+                        
             <h1 className = "div3">Sign Up</h1>
+
+            <label  className = "div3" htmlFor="first_name">First Name</label>
+            <input
+            className = "link2"
+            type="text"
+            id="first_name"
+            value={first_name}
+            onChange={(e) => setFirstName(e.target.value)}
+            autoComplete="off"
+            />
+
+            <label  className = "div3" htmlFor="last_name">Last Name</label>
+            <input
+            className = "link2"
+            type="text"
+            id="last_name"
+            value={last_name}
+            onChange={(e) => setLastName(e.target.value)}
+            autoComplete="off"
+            />
+            
             <label  className = "div3" htmlFor="username">Username</label>
             <input
             className = "link2"
@@ -52,6 +74,7 @@ import { Form } from "react-bootstrap";
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             />
+
             <label  className = "div3" htmlFor="password">Password</label>
             <input
             className = "link2"
@@ -61,6 +84,7 @@ import { Form } from "react-bootstrap";
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
             />
+
             <label  className = "div3" htmlFor="password">Password </label>
             <label  className = "div3" htmlFor="password">Confirmation</label>
             <input
@@ -71,24 +95,7 @@ import { Form } from "react-bootstrap";
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             autoComplete="current-password"
             />
-            <label  className = "div3" htmlFor="first_name">First Name</label>
-            <input
-            className = "link2"
-            type="text"
-            id="first_name"
-            value={first_name}
-            onChange={(e) => setFirstName(e.target.value)}
-            autoComplete="off"
-            />
-            <label  className = "div3" htmlFor="last_name">Last Name</label>
-            <input
-            className = "link2"
-            type="text"
-            id="last_name"
-            value={last_name}
-            onChange={(e) => setLastName(e.target.value)}
-            autoComplete="off"
-            />
+
             {errors.map((err) => (
             <h1 className = "link2">{err}</h1>
             ))}
