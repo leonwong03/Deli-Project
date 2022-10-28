@@ -1,7 +1,45 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+User.create(first_name: "Leon", last_name: "Wong",username: "Leon", password: "asd", password_confirmation: "asd")
+User.create(first_name: "Parry", last_name: "Huang",username: "Parry", password: "twig", password_confirmation:"twig")
+User.create(first_name: "Ian", last_name: "Gottheim",username: "Ian", password: "noloss", password_confirmation:"noloss")
+
+Vape.create(name: "Elf Bar BC5000 Peach Mango Watermelon", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Peach_Mango_Watermelon_Bc5000_600x.png?v=1634243531")
+Vape.create(name: "Elf Bar BC5000 Strawberry Mango", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Mango_Bc5000_600x.png?v=1634243981")
+Vape.create(name: "Elf Bar BC5000 Cranberry Grape", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Cranberry_Grape_Bc5000_600x.png?v=1634242857")
+Vape.create(name: "Elf Bar BC5000 Blue Razz Ice", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Blue_Razz_Ice_Bc5000_600x.png?v=1634242763")
+Vape.create(name: "Elf Bar BC5000 Watermelon Ice", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Watermelon_Ice_Bc5000_600x.png?v=1634244029")
+Vape.create(name: "Elf Bar BC5000 Strawberry Piña Colada", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Pina_Colada_Bc5000_600x.png?v=1648061971")
+Vape.create(name: "Elf Bar BC5000 Strawberry Mango", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Mango_Bc3500_600x.png?v=1634243946")
+Vape.create(name: "Elf Bar BC5000 Red Mojito", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Red_Mojito_Bc5000_600x.png?v=1634243706")
+Vape.create(name: "Elf Bar BC5000 Strawberry Kiwi", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Kiwi_Bc5000_600x.png?v=1634243917")
+Vape.create(name: "Elf Bar BC5000 Triple Berry Ice", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Triple_Berry_Ice_Bc5000_600x.png?v=1640875945")
+Vape.create(name: "Elf Bar BC5000 Energy", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Energy_Bc3500_600x.png?v=1634242907")
+Vape.create(name: "Elf Bar BC5000 Kiwi Passionfruit Guava", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Kiwi_Passionfruit_Guava_Bc5000_600x.png?v=1634243095")
+Vape.create(name: "Elf Bar BC5000 Cranberry Grape", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Cranberry_Grape_Bc3500_600x.png?v=1634242802")
+Vape.create(name: "Elf Bar BC5000 Sweet Menthol", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Sweet_Menthol_Bc3500_400x.png?v=1641834427")
+Vape.create(name: "Elf Bar BC5000 Kiwi Melon", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Kiwi_Melon_Bc3500_400x.png?v=1641834282")
+Vape.create(name: "Elf Bar BC5000 Bubble Gum Ice", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Bubble_Gum_Ice_Bc3500_400x.png?v=1642458355")
+Vape.create(name: "Elf Bar BC5000 Grape Energy", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Grape_Energy_Bc5000_400x.png?v=1656000176")
+Vape.create(name: "Elf Bar BC5000 Sour Candy", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Sour_Candy_Bc5000_400x.png?v=1656000387")
+Vape.create(name: "Elf Bar BC5000 Clear", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Clear_Bc5000_15b91aa9-9f1a-4408-b269-e99620b98f7a_400x.png?v=1656540548")
+Vape.create(name: "Elf Bar BC5000 Mint Tobacco", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Mint_Tobacco_Bc5000_01dd8896-9f40-4336-8675-5e6a2f3864ed_400x.png?v=1656540569")
+Vape.create(name: "Elf Bar BC5000 Mandarin Lime", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Mandarin_Lime_Bc5000_400x.png?v=1656610926")
+Vape.create(name: "Elf Bar BC5000 Guava Ice", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Guava_Ice_Bc3500_400x.png?v=1647034154")
+Vape.create(name: "Elf Bar BC5000 Strawberry Cream", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Strawberry_Cream_Bc5000_7c5e44a0-9a00-4e35-9931-9488fd460faa_600x.png?v=1656540608")
+Vape.create(name: "Elf Bar BC5000 Peach Berry", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Peach_Berry_Bc5000_400x.png?v=1656000344")
+Vape.create(name: "Elf Bar BC5000 Lemon Mint", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Lemon_Mint_Bc5000_400x.png?v=1634243194")
+Vape.create(name: "Elf Bar BC5000 Rainbow Candy", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Rainbow_Candy_Bc5000_400x.png?v=1639757492")
+Vape.create(name: "Elf Bar BC5000 Sour Apple", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Sour_Apple_Bc5000_400x.png?v=1640875802")
+Vape.create(name: "Elf Bar BC5000 Tropical Rainbow Blast", price: 20.00, description: "5mg", image_url: "https://cdn.shopify.com/s/files/1/0070/8286/8772/products/Tropical_Rainbow_Blast_Bc5000_400x.png?v=1640875961")
+
+UserItem.create(user_id: 1, vape_id: 1)
+UserItem.create(user_id: 2, vape_id: 4)
+UserItem.create(user_id: 3, vape_id: 2)
+
+VapeReview.create(comment: "Too sweet!", user_id: 1, rating: 4, vape_id: 5)
+VapeReview.create(comment: "Nasty", user_id: 1, rating: 5, vape_id: 1)
+VapeReview.create(comment: "Good!", user_id: 1, rating: 5, vape_id: 6)
+VapeReview.create(comment: "iight!", user_id: 1, rating: 1, vape_id: 3)
+VapeReview.create(comment: "disgusting!", rating: 3, user_id: 1, vape_id: 2)
+VapeReview.create(comment: "ok!", rating: 5, user_id: 1, vape_id: 1)
+
+puts "seed done"

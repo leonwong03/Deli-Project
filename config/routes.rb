@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+    
+    resources :vapes
+    resources :user_items
+    resources :users
+    resources :vape_reviews
 
-    get '/hello', to: 'application#hello_world'
+    get "/me", to: "users#show"
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
 
     get '*path',
         to: 'fallback#index',
         constraints: ->(req) { !req.xhr? && req.format.html? }
+
+    
 
 end

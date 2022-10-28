@@ -1,38 +1,224 @@
-.App {
+body {
+  background: linear-gradient(to bottom, #209698, #ff606e);
+  height: 1000px;
+
+}
+
+.image {
+
+  border-radius: 4px;
+  padding: 10px;
+  width: 150px;
+}
+
+.App{
+ 
+  width: 750px;
+  height: 1000px;
+  margin: auto;
+  border: #8f246c;
+
+}
+
+.container{
+  text-align:left;
+  padding: 10px 20px;
+  margin-left: 5%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+
+}
+
+
+button{
+  background-color: rgb(70, 70, 168);
+}
+
+.link {
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: large;
+margin-right: 20px;
+
+text-align: center;
+margin-left: 15%;
+}
+
+.link2 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: large;
+  width: 200px;
+  margin-left: 0;
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  text-emphasis-color: blue;
   }
+  .link3 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    font-style: bold;
+    width: 500px;
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 0;
+    color: rgb(8, 7, 7);
+    text-emphasis-color: rgb(0, 255, 110);
+    }
+
+    .link4 {
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size:xx-large;
+      font-style: bold;
+      width: 500px;
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 0;
+      color: rgb(4, 3, 3);
+      text-emphasis-color: rgb(0, 255, 110);
+      }
+
+    .link5 {
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size:xx-large;
+      font-style: bold;
+      width: 600px;
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 0;
+      color: rgb(52, 128, 67);
+      text-emphasis-color: rgb(0, 255, 110);
+      }
+
+    .link6 {
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: large;
+      font-style: bold;
+      width: 600px;
+      margin-left: 0;
+      text-align: left;
+      margin-bottom: 0;
+      color: rgb(0, 0, 0);
+    
+      }
+  
+.cool{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  background-color: rgb(62, 120, 104);
+  margin-left: 5%;
+  margin-right: 5%
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sweet{
+ 
+  background: linear-gradient(to bottom, #837d81, #474998);
+  border-radius: 25px;
+  height: 200px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  text-decoration: none;
+  border: 4px solid #34b021;
+  margin-bottom: 20px;
+}
+.sweet1{
+ 
+  background: linear-gradient(to bottom, #ca4ca0, #a42e67);
+  border-radius: 25px;
+  height: 100px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  border: 4px solid #b03b21;
+  margin-bottom: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
-.App-link {
-  color: #61dafb;
+.newShoe{
+  background: linear-gradient(to bottom, #837d81, #474998);
+  height: 110px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  border: 4px solid #b0215e;
+  margin-bottom: 20px;
+
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error{
+
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+
+.form-control{
+
+margin-left: 35%;
+text-align: center;
+width: 150px;
+color: #474998;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.div1{
+  font-family: "Matter",Arial,sans-serif;
+  font-weight: normal;
+  letter-spacing: .25px;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.2;
+  margin-left: 25px;
+  text-transform: uppercase;
+  
+
+}
+
+
+.div2{
+  margin-left: 25%;
+}
+
+.div3{
+  margin-left: 35%;
+
+}
+
+.div4{
+  font-family: "Matter",Arial,sans-serif;
+  font-weight: normal;
+  letter-spacing: .25px;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.2;
+  margin-left: 25px;
+  text-transform: uppercase;
+
+}
+
+.div5{
+  margin-left: 9%;
+  margin-right: 9%;
+
+}
+
+
+.intro{
+
+  color: #59fec1;
+  margin-left:25%;
+  width: 400px;
+  height: 4em;
+ 
+
 }
