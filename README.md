@@ -1,24 +1,11 @@
-# README
+Tasks left: 
+Sign up for an account, DONE
+Log in to the site & remain logged in DONE
+Log out, DONE
+View a list of all available dog houses in my area and their respective reviews, DONE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+***** Create a review for one specific dog house, SORT OF DONE (NEED TO CREATE A BUTTON PROB FOR IMAGE TO BRING USERS TO            http://localhost:4000/vape/1)
 
-Things you may want to cover:
+***** Modify or delete a review that I left,(INCOMPLETE NEED TO CREATE THIS)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Create a new dog house listing.(DONE)
