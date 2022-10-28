@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to bottom, #209698, #ff606e);
+  background: linear-gradient(to bottom, #37e154, #20fffb);
   height: 1000px;
 
 }
@@ -31,7 +31,7 @@ body {
 
 
 button{
-  background-color: rgb(70, 70, 168);
+  background-color: rgb(255, 255, 255);
 }
 
 .link {
@@ -111,7 +111,7 @@ margin-left: 15%;
 
 .sweet{
  
-  background: linear-gradient(to bottom, #837d81, #474998);
+  background: linear-gradient(to bottom, #8338c5, #530cc7);
   border-radius: 25px;
   height: 200px;
   position: relative;
