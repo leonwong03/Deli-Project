@@ -2,8 +2,7 @@ class Vape < ApplicationRecord
 
     has_many :user_items
     has_many :users, through: :user_items
-
-    has_many :vape_review
+    has_many :vape_reviews
 
     validates :name, presence: true
     validates :name, uniqueness: true

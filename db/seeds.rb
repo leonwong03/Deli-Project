@@ -35,11 +35,11 @@ UserItem.create(user_id: 1, vape_id: 1)
 UserItem.create(user_id: 2, vape_id: 4)
 UserItem.create(user_id: 3, vape_id: 2)
 
-VapeReview.create(comment: "Too sweet!", user_id: 1, rating: 4, vape_id: 5)
-VapeReview.create(comment: "Nasty", user_id: 1, rating: 5, vape_id: 1)
-VapeReview.create(comment: "Good!", user_id: 1, rating: 5, vape_id: 6)
-VapeReview.create(comment: "iight!", user_id: 1, rating: 1, vape_id: 3)
-VapeReview.create(comment: "disgusting!", rating: 3, user_id: 1, vape_id: 2)
-VapeReview.create(comment: "ok!", rating: 5, user_id: 1, vape_id: 1)
+VapeReview.create(user_id: 1, vape_id: 1, comment: "Too sweet!", rating: 4)
+VapeReview.create(user_id: 2, vape_id: 1, comment: "Nasty", rating: 5)
+VapeReview.create(user_id: 3, vape_id: 1, comment: "Good!", rating: 5)
+VapeReview.create(user_id: 1, vape_id: 2, comment: "iight!", rating: 1)
+VapeReview.create(user_id: 1, vape_id: 2, comment: "disgusting!", rating: 3)
+VapeReview.create(user_id: 2, vape_id: 3, comment: "ok!", rating: 5)
 
 puts "seed done"

@@ -6,13 +6,14 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import SignUp from "./SignUp";
 import VapeList from "./VapeList";
+import Vape from "./Vape";
 import './App.css';
 //import VapeUser from "./VapeUser";
 
 function App() {
     const [vapes, setVapes] = useState([])
     const [user_items, setUserItems] = useState([])
-    const [currentUser, setcurrentUser] = useState(null)
+    const [currentUser, setcurrentUser] = useState({})
     //const [errors1, setErrors] = useState([])
 
     useEffect(() => {
@@ -73,7 +74,7 @@ function App() {
       console.log(currentUser)
       // console.log(reviews)
       // console.log(vapes)
-      console.log(currentUser)
+      // console.log(currentUser)
 
       return (
         <BrowserRouter>
@@ -82,7 +83,12 @@ function App() {
           
           <main>
             <Switch>
-              <Route path="/vape">
+
+              <Route path={"/vape/:vapeId"}>
+                <Vape currentUser = {currentUser} vapes = {vapes} />
+              </Route>
+
+              <Route exact path="/vape">
                 <VapeList vape = {vapes} setVapes = {setVapes1}/>
               </Route>
 

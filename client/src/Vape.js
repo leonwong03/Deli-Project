@@ -1,30 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
-function VapeList({vapeId, addVapeReview}) {
-    const [name, setName] = useState("");
-    const [errors, setErrors] = useState([]);
-    const [price, setPrice] = useState("");
-    const [image_url, setImageUrl] = useState("");
-    const [description, setDescription] = useState("");
+function Vape({currentUser, vapes }) {
+    let { vapeId } = useParams();
+    console.log(vapeId);
+    const vape_id = parseInt(vapeId);
+    const user_id = currentUser.id;
 
-let vapes = vape.map((i)=> <div className = "container"> <h1 className = "sweet"> Name:{i.name} Price: ${i.price} <img className = "image" src = {i.image_url}></img> </h1></div>)
+    const [vapeReviews, setVapeReviews] = useState([]);
+    const [errors, setErrors] = useState([]);
+
+    const [comment, setComment] = useState("");
+    const [rating, setRating] = useState("");
+
+    useEffect(() => {
+        console.log(vapeReviews);
+    }, [vapeReviews])
+
+function addVapeReview(e)
+        {
+        setVapeReviews([...vapeReviews, e])
+        }
 
 useEffect(()=>{
-    fetch('/vape_reviews')
+    fetch(`/vapes/${vape_id}/vape_reviews`)
     .then(r=> r.json())
-    .then(data => setVapes(data))
+    .then(data => setVapeReviews(data))
     }
     ,[])
 
 function handleSubmit(e) {
+    console.log({ user_id, vape_id, comment, rating });
     e.preventDefault();
-    fetch(`/vapes/${vapeId}/review`, {
+    fetch(`/vape_reviews`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ currentUser.id, vape.id, rating, comment }),
+        body: JSON.stringify({ user_id, vape_id, comment, rating }),
         }).then((r) => {
         if (r.ok) {
             r.json().then((e) => addVapeReview(e))
@@ -36,36 +50,35 @@ function handleSubmit(e) {
 }
 
 return(
-    <div> {vapes}
-    <div className = "newVape">
+    <div>
+        <div className = "container">
+            {vapeId && (vapes[vapeId] !== undefined ?
+                <h1 className = "sweet"> Name:{vapes[vapeId].name} Price: ${vapes[vapeId].price} <img className = "image" src = {vapes[vapeId].image_url}></img></h1>
+            : 'Not Found')}
+        </div>
+        {vapeReviews.map((i)=> {
+            return <div className = "container"> <h1 className = ""> comment:{i.comment} rating: ${i.rating} {i.user_id === user_id ? 'edit' : ''} </h1></div>
+        })}
+    <div className = "newVapeReview">
         <form onSubmit={(e)=> handleSubmit(e)}>
-            <h1 className = "link6">Add A New Vape</h1>
-            <label htmlFor="name">Name</label>
+            <h1 className = "link6">Add A New Vape Review</h1>
+            <label htmlFor="comment">Comment</label>
 
             <input
                 type="text"
-                id="name"
+                id="comment"
                 autoComplete="off"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
             />
 
-            <label htmlFor="price">Price</label>
+            <label htmlFor="rating">Rating</label>
             <input
                 type="text"
-                id="price"
+                id="rating"
                 autoComplete="off"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-            />
-
-            <label htmlFor="image_url">Image Url</label>
-            <input
-                type="text"
-                id="image_url"
-                autoComplete="off"
-                value={image_url}
-                onChange={(e) => setImageUrl(e.target.value)}
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
             />
 
             <button type="submit">👟</button>
@@ -81,4 +94,4 @@ return(
     </div>
 )}
 
-export default VapeList
+export default Vape
