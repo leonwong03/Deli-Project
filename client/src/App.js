@@ -101,7 +101,7 @@ function App() {
               </Route>
 
               <Route path="/">
-                  <Home />
+                <Home />
               </Route>
             </Switch>
           </main>

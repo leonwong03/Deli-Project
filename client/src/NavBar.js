@@ -16,7 +16,7 @@ function NavBar({ user, setUser }) {
             <div >
                 {user ? (
                 <>
-                <Link className = "div2" to="/">Store</Link>
+                <Link className = "div1" to="/">Home</Link>
                 <Link className = "div1" to="/vape">Vape List</Link>
                 <button className = "div1" onClick={handleLogoutClick}>Logout</button>
                 </>

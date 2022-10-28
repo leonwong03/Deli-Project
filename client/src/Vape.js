@@ -87,7 +87,7 @@ return(
             : 'Not Found')}
         </div>
         {vapeReviews.map((i)=> {
-            return <div className = "container"> <h1 className = ""> comment:{i.comment} rating: ${i.rating} {i.user_id === user_id ? 'edit' : ''} </h1></div>
+            return <div className = "container"> <h1 className = ""> comment:{i.comment} rating: ${i.rating} {i.user_id === user_id ? 'edit' : ''} {i.user_id === user_id ? 'delete' : ''}</h1></div>
         })}
         </form>
     </div>

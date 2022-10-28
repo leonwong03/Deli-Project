@@ -61,7 +61,7 @@ return(
                 onChange={(e) => setImageUrl(e.target.value)}
             />
 
-            <button type="submit">👟</button>
+            <button type="submit">Submit</button>
 
             <div>
                 {errors.map((err) => (
