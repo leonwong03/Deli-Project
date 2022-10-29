@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 function VapeList({vape, setVapes}) {
@@ -8,7 +9,17 @@ function VapeList({vape, setVapes}) {
     const [image_url, setImageUrl] = useState("");
     const [description, setDescription] = useState("");
 
-let vapes = vape.map((i)=> <div className = "container"> <h1 className = "sweet"> Name:{i.name} Price: ${i.price} <img className = "image" src = {i.image_url}></img> </h1></div>)
+let vapes = vape.map((i)=> {
+    return <div className = "container">
+        <Link to={`/vape/${i.id}`}>
+            <h1 className = "sweet"> 
+                Name:{i.name} 
+                Price: ${i.price} 
+                <img className = "image" src = {i.image_url}></img> 
+            </h1>
+        </Link>
+    </div>
+})
 
 function handleSubmit(e) {
     e.preventDefault();

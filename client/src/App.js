@@ -50,10 +50,11 @@ function App() {
         setUserItems([...user_items, e])
         }
 
-      function setVapes1(e)
+      function set_Vapes(e)
         {
-
           setVapes([...vapes, e])
+          
+          console.log(e, vapes);
         }
 
       function handleDeleteUserItems(e)
@@ -71,7 +72,7 @@ function App() {
           setcurrentUser(e)
         }
 
-      console.log(currentUser)
+      // console.log(currentUser)
       // console.log(reviews)
       // console.log(vapes)
       // console.log(currentUser)
@@ -89,7 +90,7 @@ function App() {
               </Route>
 
               <Route exact path="/vape">
-                <VapeList vape = {vapes} setVapes = {setVapes1}/>
+                <VapeList vape = {vapes} setVapes = {set_Vapes}/>
               </Route>
 
               <Route path="/signup">

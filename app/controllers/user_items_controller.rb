@@ -42,7 +42,7 @@ class UserItemsController < ApplicationController
     end
 
     def user_item_params
-        params.permit(:user_id, :vape_id, :vape_review)
+        params.permit(:user_id, :vape_id)
     end
-    
+
 end

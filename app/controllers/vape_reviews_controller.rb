@@ -20,7 +20,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
     def create
         vape_reviews = VapeReview.create!(vape_reviews_params)
-        vape_reviews json: vape_reviews, status: :created
+        render json: vape_reviews, status: :created
     end
 
     def destroy

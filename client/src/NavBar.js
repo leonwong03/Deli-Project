@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import VapeList from "./VapeList";
 import './App.css';
 
+
 function NavBar({ user, setUser }) {
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((r) => {

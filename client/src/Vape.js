@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import VapeReview from "./VapeReview";
 
 function Vape({currentUser, vapes }) {
     let { vapeId } = useParams();
-    console.log(vapeId);
+    // console.log(vapeId);
     const vape_id = parseInt(vapeId);
-    const user_id = currentUser.id;
+    const user_id = currentUser?.id ?? undefined;
 
+    const [vape, setVape] = useState(vapes[vapeId]);
     const [vapeReviews, setVapeReviews] = useState([]);
     const [errors, setErrors] = useState([]);
 
@@ -18,79 +20,108 @@ function Vape({currentUser, vapes }) {
         console.log(vapeReviews);
     }, [vapeReviews])
 
-function addVapeReview(e)
-        {
+    useEffect(() => {
+        vapes.forEach( (row, index) => {
+            if (row.id === vape_id) {
+                setVape(row);
+            }
+        });
+    }, [vape_id, vapes])
+
+    function addVapeReview(e)
+    {
         setVapeReviews([...vapeReviews, e])
-        }
-
-useEffect(()=>{
-    fetch(`/vapes/${vape_id}/vape_reviews`)
-    .then(r=> r.json())
-    .then(data => setVapeReviews(data))
     }
-    ,[])
 
-function handleSubmit(e) {
-    console.log({ user_id, vape_id, comment, rating });
-    e.preventDefault();
-    fetch(`/vape_reviews`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user_id, vape_id, comment, rating }),
-        }).then((r) => {
-        if (r.ok) {
-            r.json().then((e) => addVapeReview(e))
-        }
-        else {
-            r.json().then((err) => setErrors(err.errors));
-        }
-    });
-}
+    function sortByKey(array, key) {
+        return array.sort(function(a, b) {
+            var x = a[key]; var y = b[key];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
+    }
+
+    function fetchVapeReviews()
+    {
+        fetch(`/vapes/${vape_id}/vape_reviews`)
+            .then(r=> r.json())
+            .then(data => {
+                let ordered = sortByKey(data, 'id')
+                setVapeReviews(ordered)
+            })
+    }
+
+    useEffect(()=>{
+        fetchVapeReviews()
+    }, [])
+
+    function handleSubmit(e) {
+        console.log({ user_id, vape_id, comment, rating });
+        e.preventDefault();
+        fetch(`/vape_reviews`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ user_id, vape_id, comment, rating }),
+            }).then((r) => {
+            if (r.ok) {
+                r.json().then((e) => addVapeReview(e))
+            }
+            else {
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
+    }
+
+
+    let renderVapeReviews = vapeReviews?.map((i)=> {
+        // console.log('vapeReview', i);
+        return <div key={i.id} className = "container">
+            <VapeReview review={i} userId={user_id} vapeId={vape_id} updateVapeReview={fetchVapeReviews}/>
+        </div>
+    })
 
 return(
     <div>
-            <div className = "newVapeReview">
-                <form onSubmit={(e)=> handleSubmit(e)}>
-            <h1 className = "link6">Add A Review</h1>
-            <input
-                type="text"
-                id="comment"
-                autoComplete="off"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-            />
-
-            <label htmlFor="rating">Rating</label>
-            <input
-                type="text"
-                id="rating"
-                autoComplete="off"
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
-            />
-
-            <button type="submit">Submit</button>
-
-            <label htmlFor="comment">Comment</label>
-            <div>
-                {errors.map((err) => (
-                <span className = "link3" key={err}>     {err}!</span>
-                ))}
-            </div>
-
-
         <div className = "container">
-            {vapeId && (vapes[vapeId] !== undefined ?
-                <h1 className = "sweet"> Name:{vapes[vapeId].name} Price: ${vapes[vapeId].price} <img className = "image" src = {vapes[vapeId].image_url}></img></h1>
-            : 'Not Found')}
+            {vape !== undefined ?
+                <h1 className = "sweet"> 
+                    Name:{vape.name} 
+                    Price: ${vape.price} 
+                    <img className = "image" src = {vape.image_url}></img>
+                </h1>
+            : 'Not Found'}
         </div>
-        {vapeReviews.map((i)=> {
-            return <div className = "container"> <h1 className = ""> comment:{i.comment} rating: ${i.rating} {i.user_id === user_id ? 'edit' : ''} {i.user_id === user_id ? 'delete' : ''}</h1></div>
-        })}
-        </form>
-    </div>
+        { user_id && (
+            <form onSubmit={(e)=> handleSubmit(e)}>
+                <h1 className = "link6">Add A Review</h1>
+                <label htmlFor="comment">Comment</label>
+                <input
+                    type="text"
+                    id="comment"
+                    autoComplete="off"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                />
+
+                <label htmlFor="rating">Rating</label>
+                <input
+                    type="text"
+                    id="rating"
+                    autoComplete="off"
+                    value={rating}
+                    onChange={(e) => setRating(e.target.value)}
+                />
+
+                <button type="submit">Submit</button>
+                <div>
+                    {errors.map((err) => (
+                    <span className = "link3" key={err}>     {err}!</span>
+                    ))}
+                </div>
+            </form>
+        )}
+        {renderVapeReviews}
     </div>
 )}
 
